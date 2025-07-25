@@ -19,3 +19,18 @@ CREATE TABLE tb_brng_bawaan (
     FOREIGN KEY (id_penghuni) REFERENCES tb_penghuni(id),
     FOREIGN KEY (id_barang) REFERENCES tb_barang(id)
 );
+CREATE TABLE tb_kamar (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nomor VARCHAR(10),
+    harga DECIMAL(12,2)
+);
+
+CREATE TABLE tb_kmr_penghuni (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_kamar INT,
+    id_penghuni INT,
+    tgl_masuk DATE,
+    tgl_keluar DATE,
+    FOREIGN KEY (id_kamar) REFERENCES tb_kamar(id),
+    FOREIGN KEY (id_penghuni) REFERENCES tb_penghuni(id)
+);
