@@ -41,3 +41,10 @@ CREATE TABLE tb_tagihan (
     jml_tagihan DECIMAL(12,2),
     FOREIGN KEY (id_kmr_penghuni) REFERENCES tb_kmr_penghuni(id)
 );
+CREATE TABLE tb_bayar (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_tagihan INT,
+    jml_bayar DECIMAL(12,2),
+    status ENUM('lunas', 'belum'),
+    FOREIGN KEY (id_tagihan) REFERENCES tb_tagihan(id)
+);
