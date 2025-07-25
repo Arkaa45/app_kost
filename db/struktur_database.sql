@@ -12,3 +12,10 @@ CREATE TABLE tb_barang (
     nama VARCHAR(100),
     harga DECIMAL(12,2)
 );
+CREATE TABLE tb_brng_bawaan (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_penghuni INT,
+    id_barang INT,
+    FOREIGN KEY (id_penghuni) REFERENCES tb_penghuni(id),
+    FOREIGN KEY (id_barang) REFERENCES tb_barang(id)
+);
