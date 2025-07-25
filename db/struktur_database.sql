@@ -34,3 +34,10 @@ CREATE TABLE tb_kmr_penghuni (
     FOREIGN KEY (id_kamar) REFERENCES tb_kamar(id),
     FOREIGN KEY (id_penghuni) REFERENCES tb_penghuni(id)
 );
+CREATE TABLE tb_tagihan (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    bulan VARCHAR(20),
+    id_kmr_penghuni INT,
+    jml_tagihan DECIMAL(12,2),
+    FOREIGN KEY (id_kmr_penghuni) REFERENCES tb_kmr_penghuni(id)
+);
